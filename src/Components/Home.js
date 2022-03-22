@@ -1,5 +1,6 @@
-
-import React from 'react';
+import React, { useContext } from 'react';
+import { Notes } from './Notes';
+// import Noteitem from './Noteitem'
 
 const Home = () => {
   return (
@@ -18,14 +19,12 @@ const Home = () => {
           </div>
           <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            <label yclass="form-check-label" for="exampleCheck1">Check me out</label>
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
-      <div className="container">
-        <h2>Your Notes</h2>
-      </div>
+      <Notes />
     </div>
   );
 }
