@@ -12,6 +12,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import { Alert } from './Components/Alert';
 export default class App extends Component {
   render() {
 
@@ -20,6 +21,7 @@ export default class App extends Component {
         <NoteState>
           <Router>
             <Navbar />
+            <Alert message="this is amazing react course" />
             <div className='container'>
               <Switch>
                 <Route exact path="/"><Home /></Route>
