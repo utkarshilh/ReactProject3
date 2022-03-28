@@ -28,16 +28,19 @@ router.post('/createuser', [
 
 ], async (req, res) => {
 
+    let success = false;
+
+
     // if there are error then returns bad request and the errors 
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
+        return res.status(400).json({ success, errors: errors.array() });
     }
 
     // check wheter the user with this email  exists already
     let user = await User.findOne({ email: req.body.email });
     if (user) {
-        return res.status(400).json({ error: "sorry the user with this email already exists" });
+        return res.status(400).json({ success, error: "sorry the user with this email already exists" });
 
 
     }
@@ -65,8 +68,8 @@ router.post('/createuser', [
         const authtoken = jwt.sign(data, JWT_SECRET);
         // console.log(jwtData);
         // res.json(user);
-
-        res.json({ authtoken })
+        success = true;
+        res.json({ success, authtoken })
     } catch (error) {
         console.error(error.message);
         res.status(500).send("internal server occured");
@@ -79,6 +82,7 @@ router.post('/login', [
     body('email', 'enter a valid email').isEmail(),
     body('password', 'password cannot be blank').exists(),
 ], async (req, res) => {
+    let sucess = false;
 
     // if there are error then returns bad request and the errors 
     const errors = validationResult(req);
@@ -90,12 +94,16 @@ router.post('/login', [
     try {
         let user = await User.findOne({ email })
         if (!user) {
+            success = false;
+
             return res.status(400).json({ error: "please try to login with correct credential " });
         }
 
         const passwordCompare = await bcrypt.compare(password, user.password)
         if (!passwordCompare) {
-            return res.status(400).json({ error: "please try to login with correct credential " });
+            success = false;
+
+            return res.status(400).json({ success, error: "please try to login with correct credential " });
         }
 
         const data = {
@@ -104,7 +112,8 @@ router.post('/login', [
             }
         }
         const authtoken = jwt.sign(data, JWT_SECRET)
-        res.json({ authtoken })
+        success = true;
+        res.json({ success, authtoken })
     } catch (error) {
         console.error(error.message);
         res.status(500).send("internal server occured");
