@@ -13,6 +13,8 @@ import {
   Route,
 } from "react-router-dom";
 import { Alert } from './Components/Alert';
+import Signup from './Components/Signup';
+import Login from './Components/Login';
 export default class App extends Component {
   render() {
 
@@ -24,8 +26,21 @@ export default class App extends Component {
             <Alert message="this is amazing react course" />
             <div className='container'>
               <Switch>
-                <Route exact path="/"><Home /></Route>
-                <Route exact path="/about"><About /></Route>
+                <Route exact path="/">
+                  <Home />
+                </Route>
+
+                <Route exact path="/about">
+                  <About />
+                </Route>
+
+                <Route exact path="/login">
+                  <Login />
+                </Route>
+
+                <Route exact path="/signup">
+                  <Signup />
+                </Route>
 
               </Switch>
             </div>
