@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router'
 
-const Login = () => {
+const Login = (props) => {
     const [credentials, setCredentials] = useState({ email: "", password: "" })
     let history = useHistory();
 
@@ -25,11 +25,12 @@ const Login = () => {
             //    save the auth token and redirect
             localStorage.setItem('token', json.authtoken);
             history.push("/")
+            props.showAlert("logged in successfully", "success")
 
 
         }
         else {
-            alert("Invalid credentials");
+            props.showAlert("Invalid Details", "danger")
         }
 
     }
@@ -40,19 +41,23 @@ const Login = () => {
 
     }
     return (
-        <div>
-            <form className='container' onSubmit={handleSubmit}>
-                <div className="mb-3">
-                    <label htmlFor="email" className="form-label">Email address</label>
-                    <input type="email" className="form-control" id="email" name='email' value={credentials.email} aria-describedby="emailHelp" onChange={onChange} />
+        <div className=" container mt-3">
+            <h2 className="my-2">Login to Continue to Inotebook</h2>
 
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="password" className="form-label">Password</label>
-                    <input type="password" className="form-control" name='password' value={credentials.password} id="password" onChange={onChange} />
-                </div>
-                <button type="submit" className="btn btn-primary" >Submit</button>
-            </form>
+            <div>
+                <form onSubmit={handleSubmit}>
+                    <div className="mb-3">
+                        <label htmlFor="email" className="form-label">Email address</label>
+                        <input type="email" className="form-control" id="email" name='email' value={credentials.email} aria-describedby="emailHelp" onChange={onChange} />
+
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="password" className="form-label">Password</label>
+                        <input type="password" className="form-control" name='password' value={credentials.password} id="password" onChange={onChange} />
+                    </div>
+                    <button type="submit" className="btn btn-primary" >Submit</button>
+                </form>
+            </div>
         </div>
     )
 }
