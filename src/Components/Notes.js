@@ -51,7 +51,7 @@ export const Notes = (props) => {
         <>
 
             <AddNote showAlert={props.showAlert} />
-            <button ref={ref} type="button" className="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button ref={ref} type="button" className="btn btn-primary invisible" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Launch demo modal
             </button>
 
