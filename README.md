@@ -12,7 +12,7 @@
 
 <br>
 <br>
- <p>Adding and fetching notes after login</p> 
+ <p>Creating and fetching notes after login</p> 
  <img width="800" alt="Screenshot 2022-05-02 at 3 47 59 PM" src="https://user-images.githubusercontent.com/68503623/166220617-43dba0e0-f767-4218-b107-4e72d86751a6.png"> 
 <br>
 <br>
