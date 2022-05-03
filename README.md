@@ -12,25 +12,16 @@
 
 <br>
 <br>
-
+ <p>Adding and fetching notes after login</p> 
  <img width="800" alt="Screenshot 2022-05-02 at 3 47 59 PM" src="https://user-images.githubusercontent.com/68503623/166220617-43dba0e0-f767-4218-b107-4e72d86751a6.png"> 
 <br>
 <br>
-
+<p>Notes will appear Like this </p>
 <img width="800" alt="Screenshot 2022-05-02 at 4 05 59 PM" src="https://user-images.githubusercontent.com/68503623/166221643-e773f217-b9be-468d-8fe5-5f0107d54aba.png">
 <br>
 <br>
 
-<!-- <img width="800" alt="Screenshot 2022-05-02 at 4 05 59 PM" src="https://user-images.githubusercontent.com/68503623/166221689-a9528659-81ef-4ea6-8cb9-83e29e1c7e5b.png"> -->
-
-<br>
-<br>
-
-
-
-
-
-
+<p>Updating the existing Notes</p>
 <img width="800" alt="Screenshot 2022-05-02 at 3 49 36 PM" src="https://user-images.githubusercontent.com/68503623/166221753-0bdcbdf2-e56d-4142-8e1c-916ec0ba7649.png">
 <br>
 <br>
